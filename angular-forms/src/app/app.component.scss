@@ -1,0 +1,35 @@
+.red {
+  background-color: red;
+  font-weight: bold;
+}
+
+.blue {
+  background-color: blue;
+  font-size: 1.5rem;
+}
+h1 {
+  text-align: center;
+}
+p {
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.wrap {
+  border: 1px dashed tomato;
+  padding: 1rem;
+}
+
+input {
+  &.ng-invalid.ng-touched {
+    border: 2px solid tomato;
+  }
+  &.ng-valid.ng-touched {
+    border: 2px solid greenyellow;
+  }
+
+}
+
+.blink {
+  text-decoration: blink;
+}

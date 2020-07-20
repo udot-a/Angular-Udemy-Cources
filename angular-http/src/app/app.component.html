@@ -1,0 +1,40 @@
+<div class="container">
+  <h1>Angular HttpClient</h1>
+
+  <div class="card">
+    <div class="form-control">
+      <input type="text" placeholder="Название" [(ngModel)]="todoTitle" (keypress)="addTodo($event)">
+    </div>
+    <button class="btn" (click)="addTodo(null)">Добавить</button>
+    <button class="btn" (click)="fetchTodos()">Загрузить</button>
+  </div>
+
+  <hr>
+
+  <p *ngIf="error" class="error">Error onboard: {{error}}</p>
+
+  <div *ngIf="!loading; else loadingBlock">
+    <div *ngIf="todos.length; else emptyList">
+
+    </div>
+    <div class="card" *ngFor="let item of todos; let idx=index ">
+      <p>
+        <span>{{idx + 1}}. </span>
+        <span [class.completed]="item.completed">{{item.title}}</span>
+        <span>
+        <button class="btn btn-danger" (click)="removeTodo(item.id)">Удалить</button>
+        <button class="btn" [disabled]="item.completed" (click)="completeTodo(item.id)">Завершить</button>
+      </span>
+      </p>
+    </div>
+
+    <ng-template #emptyList>
+      List of todos is empty now.
+    </ng-template>
+  </div>
+
+  <ng-template #loadingBlock>
+    LOADING...
+  </ng-template>
+</div>
+
