@@ -1,0 +1,10 @@
+.rect {
+    width: 150px;
+    height: 150px;
+    border: 1px solid green;
+    margin: 20px;
+}
+
+button {
+    margin: 20px;
+}
